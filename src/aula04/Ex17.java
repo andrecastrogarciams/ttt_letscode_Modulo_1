@@ -19,8 +19,8 @@ negativo”.
  */
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    Double[] salario = new Double[100];
-    int[] filhos = new int[100];
+    Double[] salario = new Double[5];
+    Integer[] filhos = new Integer[5];
     boolean sair = true;
     int i = 0;
     do{
@@ -33,13 +33,18 @@ public static void main(String[] args) {
             System.out.printf("#%d Filhos: ", (i + 1));
             filhos[i] = scanner.nextInt();
             i++;
-            if (i % 100 == 0) {
-                Double[] novoSalario = new Double[i+100];
+
+            if (i % 5 == 0) {
+                Double[] novoSalario = new Double[i+5];
+                Integer[] novoFilhos = new Integer[i+5];
                 for (int j = 0; j < salario.length; j++) {
                     novoSalario[j] = salario[j];
+                    novoFilhos[j] = filhos[j];
                 }
                 salario = novoSalario;
+                filhos = novoFilhos;
             }
+
         }
     }while (sair);
 
